@@ -19,16 +19,11 @@ package teema1;
 public class Harjutus1_tsyklid {
     public static void main(String[] args) {
 
-        FromTentoOne();
+        int count = 1;
 
-    }
-
-    public static void FromTentoOne() {
-
-        for (int j = 10; j > 0; j--) {
-
-            System.out.println(j);
-
+        while (count < 3) {
+            System.out.println(count);
+            count++;
         }
 
     }
