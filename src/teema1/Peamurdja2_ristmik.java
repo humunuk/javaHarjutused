@@ -15,5 +15,34 @@ public class Peamurdja2_ristmik extends Application {
         Foor foor2 = new Foor(Foor.ALUMINE, primaryStage);
         Foor foor3 = new Foor(Foor.PAREM, primaryStage);
         Foor foor4 = new Foor(Foor.VASAK, primaryStage);
+
+        punasestRoheliseks(foor1);
+
+
+    }
+
+    public void punasestRoheliseks(Foor foor) {
+        foor.vahetaPunast();
+        foor.paus(5.0);
+        foor.vahetaKollast();
+        foor.kustutaPunane();
+        foor.paus(0.5);
+        foor.vahetaKollast();
+        foor.paus(0.5);
+        foor.vahetaKollast();
+        foor.paus(0.5);
+        foor.vahetaKollast();
+        foor.paus(0.5);
+        foor.vahetaRohelist();
+        foor.paus(5.0);
+        foor.vahetaRohelist();
+        foor.paus(0.5);
+        foor.vahetaRohelist();
+        foor.paus(0.5);
+        foor.vahetaRohelist();
+    }
+
+    public void rohelisestPunaseks(Foor foor) {
+        
     }
 }
