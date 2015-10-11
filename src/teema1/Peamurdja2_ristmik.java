@@ -1,7 +1,9 @@
 package teema1;
 
+import javafx.animation.RotateTransition;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import lib.Foor;
 
 /**
@@ -11,38 +13,56 @@ import lib.Foor;
 public class Peamurdja2_ristmik extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Foor foor1 = new Foor(Foor.YLEMINE, primaryStage);
-        Foor foor2 = new Foor(Foor.ALUMINE, primaryStage);
-        Foor foor3 = new Foor(Foor.PAREM, primaryStage);
-        Foor foor4 = new Foor(Foor.VASAK, primaryStage);
+        Foor foor1 = new Foor(Foor.ALUMINE, primaryStage);
+        Foor foor2 = new Foor(Foor.YLEMINE, primaryStage);
+        Foor foor3 = new Foor(Foor.VASAK, primaryStage);
+        Foor foor4 = new Foor(Foor.PAREM, primaryStage);
 
-        punasestRoheliseks(foor1);
-
-
+        int count = 0;
+        while (count < 10) {
+            PunasestRoheliseks(foor1);
+            PunasestRoheliseks(foor2);
+            RohelisestPunaseks(foor3);
+            RohelisestPunaseks(foor4);
+            count = count + 1;
+        }
     }
-
-    public void punasestRoheliseks(Foor foor) {
+    public void PunasestRoheliseks(Foor foor) {
         foor.vahetaPunast();
-        foor.paus(5.0);
-        foor.vahetaKollast();
-        foor.kustutaPunane();
-        foor.paus(0.5);
+        foor.paus(3.5);
         foor.vahetaKollast();
         foor.paus(0.5);
         foor.vahetaKollast();
-        foor.paus(0.5);
-        foor.vahetaKollast();
-        foor.paus(0.5);
+        foor.vahetaPunast();
         foor.vahetaRohelist();
-        foor.paus(5.0);
+        foor.paus(2.0);
         foor.vahetaRohelist();
         foor.paus(0.5);
         foor.vahetaRohelist();
         foor.paus(0.5);
         foor.vahetaRohelist();
+        foor.paus(0.5);
+        foor.vahetaKollast();
+        foor.paus(0.5);
+        foor.vahetaKollast();
     }
-
-    public void rohelisestPunaseks(Foor foor) {
-        
+    public void RohelisestPunaseks(Foor foor) {
+        foor.vahetaRohelist();
+        foor.paus(2.0);
+        foor.vahetaRohelist();
+        foor.paus(0.5);
+        foor.vahetaRohelist();
+        foor.paus(0.5);
+        foor.vahetaRohelist();
+        foor.paus(0.5);
+        foor.vahetaKollast();
+        foor.paus(0.5);
+        foor.vahetaKollast();
+        foor.vahetaPunast();
+        foor.paus(3.5);
+        foor.vahetaKollast();
+        foor.paus(0.5);
+        foor.vahetaKollast();
+        foor.vahetaPunast();
     }
 }

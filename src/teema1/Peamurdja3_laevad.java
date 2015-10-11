@@ -1,6 +1,10 @@
 package teema1;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -16,4 +20,63 @@ import java.util.Scanner;
  *    nii vertikaalselt kui ka horisontaalselt?
  */
 public class Peamurdja3_laevad {
+
+    // 1 0 1 0 1 0 1 0
+    // Näiteks 10 reas ja 3 laeva, või mis iganes sisendiks tuleb
+    // Arrayd?
+    //VÕtame sisendi kasutajalt 0-10 näiteks ja kontrollime kas seal oli laev või ei.
+    public static void main(String[] args) {
+
+        ArrayList<Integer> ruudustik = saaRuudustik(8);
+        System.out.println(ruudustik);
+
+        do {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Sisesta laeva kordinaadid");
+        int sisend = sc.nextInt();
+
+            if (ruudustik.get(sisend) == 1) {
+                System.out.println("Pihtas, põhjas");
+                ruudustik.set(sisend, 2);
+            } else if (ruudustik.get(sisend) == 2) {
+                System.out.println("Juba tulistasid");
+            } else if (ruudustik.get(sisend) == 0) {
+                System.out.println("Mööda");
+                ruudustik.set(ruudustik.get(sisend), 3);
+            } else if (ruudustik.get(sisend) == 3) {
+                System.out.println("Juba tulistasid");
+            }
+        } while (ruudustik.contains(1));
+
+        System.out.println("Mäng läbi!");
+
+    }
+
+    public static int saaInt() {
+
+        int a;
+
+        Random rndRuut = new Random();
+
+        if (rndRuut.nextBoolean()) {
+            return 1;
+        } else {
+            return 0;
+        }
+
+    }
+
+    public static ArrayList saaRuudustik(int suurus) {
+
+        ArrayList<Integer> ruudustik = new ArrayList();
+        for (int i = 0; i<suurus; i++) {
+            ruudustik.add(saaInt());
+        }
+
+        return ruudustik;
+
+    }
+
+
 }
