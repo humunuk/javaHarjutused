@@ -43,6 +43,6 @@ public class Peamurdja2_ristmik extends Application {
     }
 
     public void rohelisestPunaseks(Foor foor) {
-        
+
     }
 }
